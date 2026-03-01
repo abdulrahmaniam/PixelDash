@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://byve82t6jllrs"]
+
+[ext_resource type="Script" uid="uid://bwxb8lorsmhye" path="res://scenes/death_script.gd" id="1_qhts7"]
+[ext_resource type="AudioStream" uid="uid://caqmhotwcihu4" path="res://sounds/hurt.mp3" id="2_spo0u"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t81tr"]
+
+[node name="death" type="Area2D" unique_id=362713959]
+script = ExtResource("1_qhts7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=988881160]
+shape = SubResource("WorldBoundaryShape2D_t81tr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1602562583]
+stream = ExtResource("2_spo0u")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
