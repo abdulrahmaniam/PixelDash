@@ -1,3 +1,0 @@
-Only the levels, scripts and scenes files were added, because git didn't allow me to upload more then 100files and more then 25MB of size so our organizers told me to do this...
-and this is online if you wanna play kindly visit 
-https://peacelover3.itch.io/pixelsdash/

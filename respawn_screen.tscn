@@ -1,24 +1,50 @@
-[gd_scene format=3 uid="uid://b6x7o4d7rj512"]
+[gd_scene format=3 uid="uid://4pjfo6iliwil"]
 
-[ext_resource type="FontFile" uid="uid://p7eislvuhoqt" path="res://fonts/PixelOperator8.ttf" id="1_bak1h"]
-[ext_resource type="Texture2D" uid="uid://do2vjn4sn2xij" path="res://sprites/knight.png" id="2_ycbwg"]
+[ext_resource type="PackedScene" uid="uid://d4h8ewlun1gbd" path="res://frequently used/character_body_2d.tscn" id="2_owvpr"]
+[ext_resource type="Texture2D" uid="uid://bqswd2v8kwf3j" path="res://sprites/background1-720.png" id="3_6g304"]
+[ext_resource type="AudioStream" uid="uid://7vmg5l5s6ara" path="res://sounds/respawn_audio.mp3" id="4_1dvyf"]
 
-[node name="heart" type="Control" unique_id=1681499327]
+[sub_resource type="GDScript" id="GDScript_r43va"]
+script/source = "extends Control
+
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+
+func _on_body_entered(body):
+	#audio_stream_player_2d.play()
+	#await get_tree().create_timer(2.5).timeout
+	get_tree().change_scene_to_file(\"res://scenes/respawn_screen.tscn\")
+"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_nuxr3"]
+
+[node name="Control" type="Control" unique_id=208157524]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = SubResource("GDScript_r43va")
 
-[node name="Label" type="Label" parent="." unique_id=436030547]
+[node name="CharacterBody2D" parent="." unique_id=2081176603 instance=ExtResource("2_owvpr")]
+z_index = 5
+position = Vector2(493, 264)
+
+[node name="Button" type="Button" parent="." unique_id=1016112943]
 layout_mode = 0
-offset_left = 13.0
-offset_top = -7.0
-offset_right = 53.0
-offset_bottom = 16.0
-theme_override_fonts/font = ExtResource("1_bak1h")
-text = "3"
+offset_left = 471.0
+offset_top = 291.0
+offset_right = 701.0
+offset_bottom = 371.0
+theme_override_font_sizes/font_size = 33
+text = "Respawn"
+icon = SubResource("ViewportTexture_nuxr3")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1415601886]
-texture = ExtResource("2_ycbwg")
-region_enabled = true
-region_rect = Rect2(5.6755524, 8.192953, 20.548782, 21.523426)
+[node name="Background1720" type="Sprite2D" parent="." unique_id=598851708]
+z_index = -5
+position = Vector2(557, 338)
+texture = ExtResource("3_6g304")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2044260854]
+stream = ExtResource("4_1dvyf")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

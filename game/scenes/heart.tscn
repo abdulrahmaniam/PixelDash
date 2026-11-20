@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b6x7o4d7rj512"]
+
+[ext_resource type="FontFile" uid="uid://p7eislvuhoqt" path="res://fonts/PixelOperator8.ttf" id="1_bak1h"]
+[ext_resource type="Texture2D" uid="uid://do2vjn4sn2xij" path="res://sprites/knight.png" id="2_ycbwg"]
+
+[node name="heart" type="Control" unique_id=1681499327]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="." unique_id=436030547]
+layout_mode = 0
+offset_left = 13.0
+offset_top = -7.0
+offset_right = 53.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("1_bak1h")
+text = "3"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1415601886]
+texture = ExtResource("2_ycbwg")
+region_enabled = true
+region_rect = Rect2(5.6755524, 8.192953, 20.548782, 21.523426)

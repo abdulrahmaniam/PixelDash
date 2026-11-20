@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://d1jvknds3maeh"]
+
+[ext_resource type="Script" uid="uid://d2ga8qnpieapk" path="res://scripts/game_won_manager.gd" id="1_jn3md"]
+[ext_resource type="FontFile" uid="uid://p7eislvuhoqt" path="res://fonts/PixelOperator8.ttf" id="1_xh1nx"]
+[ext_resource type="FontFile" uid="uid://bd88iew17u3my" path="res://fonts/PixelOperator8-Bold.ttf" id="2_jn3md"]
+[ext_resource type="Texture2D" uid="uid://cro2j55b62klx" path="res://sprites/WhatsApp Image 2026-03-06 at 4.28.32 PM.jpeg" id="4_jn3md"]
+
+[node name="Control" type="Control" unique_id=1818818395]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jn3md")
+
+[node name="Label2" type="Label" parent="." unique_id=95767490]
+layout_mode = 0
+offset_left = -160.0
+offset_top = 247.0
+offset_right = 1298.0
+offset_bottom = 340.0
+theme_override_fonts/font = ExtResource("1_xh1nx")
+theme_override_font_sizes/font_size = 16
+text = "The line has broken...
+Your commander is gone.
+ Hold your position and do nothing until the signal is given.
+ Saika is coming to take command.
+To the survivors: Stay safe."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=601142030]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 325.0
+offset_right = 956.0
+offset_bottom = 418.0
+theme_override_fonts/font = ExtResource("1_xh1nx")
+theme_override_font_sizes/font_size = 29
+text = "Next levels will be added soon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="." unique_id=877972934]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 365.0
+offset_right = 944.0
+offset_bottom = 458.0
+theme_override_fonts/font = ExtResource("1_xh1nx")
+theme_override_font_sizes/font_size = 8
+text = "THIS IS GONNA BE INTRESTING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=1183869903]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 83.0
+offset_right = 726.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("2_jn3md")
+theme_override_font_sizes/font_size = 45
+text = "Knight"
+horizontal_alignment = 1
+
+[node name="GameWonBg" type="Sprite2D" parent="." unique_id=1635395281]
+z_index = -1
+position = Vector2(595, 324)
+texture = ExtResource("4_jn3md")
+
+[node name="Button2" type="Button" parent="." unique_id=552564939]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 431.0
+offset_right = 670.0
+offset_bottom = 483.0
+theme_override_font_sizes/font_size = 31
+text = "Play again"
+
+[node name="Button3" type="Button" parent="." unique_id=1370841856]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 500.0
+offset_right = 678.0
+offset_bottom = 552.0
+theme_override_font_sizes/font_size = 31
+text = "Main menu"
+
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

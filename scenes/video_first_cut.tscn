@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://vn4ua4r20e8v"]
+
+[ext_resource type="Script" uid="uid://b6lq4487ar0pd" path="res://scenes/video_first_cut.gd" id="1_1mn8n"]
+[ext_resource type="VideoStream" uid="uid://nj2i0b8c3qhy" path="res://music/WhatsApp Video 2026-03-06 at 4.10.20 PM.ogv" id="2_1mn8n"]
+
+[node name="Area2D" type="Node2D" unique_id=1767855421]
+script = ExtResource("1_1mn8n")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1876118070]
+offset_left = -381.0
+offset_top = -214.0
+offset_right = 1539.0
+offset_bottom = 866.0
+stream = ExtResource("2_1mn8n")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=538317162]
+position = Vector2(583, 318)
+zoom = Vector2(0.6, 0.6)
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

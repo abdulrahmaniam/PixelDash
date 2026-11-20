@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bn7fp4byl5psc"]
+
+[ext_resource type="Script" uid="uid://lujkl4ghjla3" path="res://scripts/respawn_screen.gd" id="1_dr0bo"]
+[ext_resource type="Texture2D" uid="uid://bqswd2v8kwf3j" path="res://sprites/background1-720.png" id="2_tt6ao"]
+[ext_resource type="Texture2D" uid="uid://bdarh8upsmaub" path="res://sprites/game_won_bg.jpg" id="3_anwqj"]
+[ext_resource type="AudioStream" uid="uid://7vmg5l5s6ara" path="res://sounds/respawn_audio.mp3" id="3_qrdp2"]
+[ext_resource type="AudioStream" uid="uid://da6dbkku1mjp2" path="res://music/respawn_screen.mp3" id="3_tt6ao"]
+[ext_resource type="FontFile" uid="uid://bd88iew17u3my" path="res://fonts/PixelOperator8-Bold.ttf" id="4_qrdp2"]
+
+[node name="Control" type="Control" unique_id=304352603]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_dr0bo")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1881223930]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_tt6ao")
+
+[node name="GameWonBg" type="Sprite2D" parent="TextureRect" unique_id=1736455690]
+position = Vector2(455, -250)
+texture = ExtResource("3_anwqj")
+
+[node name="Button" type="Button" parent="." unique_id=2046252204]
+layout_mode = 0
+offset_left = 521.0
+offset_top = 387.0
+offset_right = 738.0
+offset_bottom = 468.0
+theme_override_font_sizes/font_size = 40
+text = "Home"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1701079181]
+stream = ExtResource("3_tt6ao")
+parameters/looping = true
+
+[node name="Label" type="Label" parent="." unique_id=1642916212]
+layout_mode = 0
+offset_left = 323.0
+offset_top = 220.0
+offset_right = 983.0
+offset_bottom = 328.0
+theme_override_fonts/font = ExtResource("4_qrdp2")
+theme_override_font_sizes/font_size = 30
+text = "You was the last hope
+you fall
+the kingdom falls
+AND YOU FAILED 😭"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="robotic" type="AudioStreamPlayer2D" parent="." unique_id=1035259839]
+stream = ExtResource("3_qrdp2")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
