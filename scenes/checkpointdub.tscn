@@ -282,7 +282,6 @@ frame_progress = 0.085435934
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1604712777]
 position = Vector2(30.5, -14)
 shape = SubResource("RectangleShape2D_vsimk")
-script = ExtResource("1_7rk2u")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D" unique_id=515819672]
 stream = ExtResource("3_7rk2u")

@@ -1,17 +1,10 @@
 [gd_scene format=3 uid="uid://6rke2xgguoog"]
 
-[ext_resource type="Script" uid="uid://bgixoqg4yvugi" path="res://scripts/video.gd" id="1_43rnx"]
+[ext_resource type="Script" uid="uid://trwmgv16om1b" path="res://scenes/video.gd" id="1_43rnx"]
 [ext_resource type="VideoStream" uid="uid://bnfjgrhiiy8wh" path="res://music/ending scene.ogv" id="2_43rnx"]
+[ext_resource type="FontFile" uid="uid://bd88iew17u3my" path="res://fonts/PixelOperator8-Bold.ttf" id="3_6u8pv"]
 
-[sub_resource type="GDScript" id="GDScript_43rnx"]
-script/source = "extends Node2D
-
-
-func _on_video_stream_player_finished() -> void:
-	get_tree().change_scene_to_file(\"res://scenes/game_won.tscn\")
-"
-
-[node name="Area2D" type="Node2D" unique_id=1767855421]
+[node name="Area2D" type="Area2D" unique_id=2144125034]
 script = ExtResource("1_43rnx")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=538317162]
@@ -19,12 +12,21 @@ position = Vector2(583, 318)
 zoom = Vector2(0.6, 0.6)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1876118070]
-offset_left = -385.0
-offset_top = -230.0
-offset_right = 1535.0
-offset_bottom = 850.0
+offset_left = -391.0
+offset_top = -209.0
+offset_right = 1529.0
+offset_bottom = 871.0
 stream = ExtResource("2_43rnx")
 autoplay = true
-script = SubResource("GDScript_43rnx")
+
+[node name="Button" type="Button" parent="." unique_id=1041561915]
+offset_left = 947.0
+offset_top = 31.0
+offset_right = 1135.0
+offset_bottom = 118.0
+theme_override_fonts/font = ExtResource("3_6u8pv")
+theme_override_font_sizes/font_size = 31
+text = "Skip?"
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

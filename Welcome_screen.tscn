@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://yiv0udfd1el8" path="res://sprites/fail_bg.jpg" id="2_1i3l3"]
 [ext_resource type="AudioStream" uid="uid://da0yxeb1tsk81" path="res://music/time_for_adventure.mp3" id="3_1i3l3"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5ij05"]
-
 [node name="Homescreen" type="Control" unique_id=1056084877]
 layout_mode = 3
 anchors_preset = 0
@@ -49,7 +47,6 @@ offset_right = 724.0
 offset_bottom = 489.0
 theme_override_font_sizes/font_size = 47
 text = "Start Game"
-icon = SubResource("ViewportTexture_5ij05")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=898085185]
 stream = ExtResource("3_1i3l3")

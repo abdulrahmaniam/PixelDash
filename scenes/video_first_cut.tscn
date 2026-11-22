@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b6lq4487ar0pd" path="res://scenes/video_first_cut.gd" id="1_1mn8n"]
 [ext_resource type="VideoStream" uid="uid://nj2i0b8c3qhy" path="res://music/WhatsApp Video 2026-03-06 at 4.10.20 PM.ogv" id="2_1mn8n"]
+[ext_resource type="FontFile" uid="uid://bd88iew17u3my" path="res://fonts/PixelOperator8-Bold.ttf" id="3_1l6n5"]
 
 [node name="Area2D" type="Node2D" unique_id=1767855421]
 script = ExtResource("1_1mn8n")
@@ -18,4 +19,14 @@ autoplay = true
 position = Vector2(583, 318)
 zoom = Vector2(0.6, 0.6)
 
+[node name="Button" type="Button" parent="." unique_id=1556576425]
+offset_left = 913.0
+offset_top = 25.0
+offset_right = 1120.0
+offset_bottom = 115.0
+theme_override_fonts/font = ExtResource("3_1l6n5")
+theme_override_font_sizes/font_size = 26
+text = "Skip?"
+
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

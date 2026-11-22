@@ -855,7 +855,7 @@ position = Vector2(0, 5)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=842102842]
 position = Vector2(50, 581)
-zoom = Vector2(4, 4)
+zoom = Vector2(5, 5)
 limit_smoothed = true
 position_smoothing_enabled = true
 
@@ -905,7 +905,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Leveltimer" type="Timer" parent="." unique_id=1554405954]
-wait_time = 60.0
+wait_time = 600.0
 one_shot = true
 autostart = true
 
